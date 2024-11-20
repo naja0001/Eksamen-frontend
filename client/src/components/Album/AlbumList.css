@@ -1,0 +1,98 @@
+/* Styles for the hotel table */
+.hotel-table {
+  width: 90%; /* Increase table width to occupy more space */
+  max-width: 1200px; /* Optional: Limit the maximum width for readability */
+  margin: 1rem auto; /* Center the table horizontally with auto margins */
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotel-table thead {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.hotel-table th,
+.hotel-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.hotel-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
+.hotel-table tr:nth-child(even) {
+  background-color: #f6f8fa; /* Light alternating row color */
+}
+
+.hotel-table tr:hover {
+  background-color: #e3f2fd; /* Subtle blue background on hover */
+}
+
+.hotel-table td {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Icon styling for edit and delete buttons */
+.edit-btn i,
+.delete-btn i {
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.edit-btn i:hover {
+  color: #28a745; /* Bright green for hover */
+  transform: scale(1.2); /* Slightly enlarges icon on hover */
+}
+
+.delete-btn i:hover {
+  color: #dc3545; /* Bright red for hover */
+  transform: scale(1.2);
+}
+
+/* Add padding for action buttons and center them */
+td .edit-btn, 
+td .delete-btn {
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+/* Clickable row styling for hotel rows */
+.clickable-row:hover {
+  background-color: #e3f2fd; /* Changes background color on hover */
+  cursor: pointer;
+}
+
+/* Default icon colors for actions */
+.edit-btn i {
+  color: green; /* Sets the edit icon color to green */
+}
+
+.delete-btn i {
+  color: red; /* Sets the delete icon color to red */
+}
+
+/* Center and widen table */
+.hotel-table-container {
+  display: flex;
+  justify-content: center; /* Center the table horizontally */
+  width: 100%; /* Make container occupy full width */
+}
+
+.icon-container {
+  display: inline-flex;
+  gap: 8px;
+}

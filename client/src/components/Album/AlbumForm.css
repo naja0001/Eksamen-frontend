@@ -1,0 +1,107 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#albumForm {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Form fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+/* Buttons */
+button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #dc3545;
+  margin-top: 1rem;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* Icon styling */
+button .fa-trash-alt {
+  margin-right: 0.5rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  #albumForm {
+    padding: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}

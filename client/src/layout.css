@@ -1,0 +1,11 @@
+nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-content {
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}

@@ -1,0 +1,23 @@
+.album-details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.album-details h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.album-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.album-details strong {
+  font-weight: bold;
+  color: #333;
+}
