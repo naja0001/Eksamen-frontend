@@ -7,9 +7,10 @@ export interface Album {
   id: number | null;
   title: string;
   artist: string;
-  genre: string;
+  genre: string; 
   availability: boolean;
 }
+
 
 let albums: Array<Album> = [];
 

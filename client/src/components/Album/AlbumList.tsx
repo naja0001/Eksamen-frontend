@@ -1,10 +1,13 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAlbums, Album } from "../../services/ApiFacade/AlbumApiFacade";
+import { useAuth } from "../../security/AuthProvider";
 import "./albumList.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function AlbumList() {
+  const auth = useAuth();
+
   const [albums, setAlbums] = useState<Album[]>([]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -47,11 +50,13 @@ export default function AlbumList() {
               <td>{album.genre}</td>
               <td>{album.availability ? "Available" : "Unavailable"}</td>
               <td onClick={(e) => e.stopPropagation()}> {/* Prevents row click from triggering edit/delete */}
+              {auth.isLoggedIn() && (
                 <div className="icon-container">
                   <Link className="edit-btn" to={`${album.id}/edit`} state={album}>
                     <i className="fas fa-edit"></i>
                   </Link>
                 </div>
+                   )}
               </td>
             </tr>
           ))}

@@ -27,6 +27,11 @@ export default function AlbumForm() {
 
   const isEditMode = albumToEdit && albumToEdit.id;
 
+  // Utility function to format genre
+  function formatGenre(genre: string): string {
+    return genre.charAt(0).toUpperCase() + genre.slice(1).toLowerCase();
+  }
+
   // Update album details
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -42,7 +47,7 @@ export default function AlbumForm() {
       }));
     }
   };
-  
+
   // Delete album and navigate back
   const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -63,11 +68,18 @@ export default function AlbumForm() {
     }
   };
 
+  // Submit form data
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
+    // Format the genre field before submitting
+    const formattedData = {
+      ...formData,
+      genre: formatGenre(formData.genre),
+    };
+
     try {
-      await addUpdateAlbum(formData);
+      await addUpdateAlbum(formattedData); // Use formattedData here
       alert(isEditMode ? "Album updated successfully" : "New album added successfully");
       navigate("/albums");
     } catch (error) {
@@ -90,7 +102,12 @@ export default function AlbumForm() {
         </div>
         <div className="form-group">
           <label htmlFor="genre">Genre:</label>
-          <select id="genre" name="genre" value={formData.genre} onChange={handleChange} required>
+          <select
+            id="genre"
+            name="genre"
+            value={formData.genre}
+            onChange={handleChange}
+            required>
             <option value="">Select Genre</option>
             <option value="ROCK">Rock</option>
             <option value="POP">Pop</option>

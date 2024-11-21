@@ -12,8 +12,8 @@ interface LoginRequest {
 }
 
 const users: Array<User> = [
-  { username: "user1", password: "test12", roles: ["USER"] },
-  { username: "admin1", password: "test12", roles: ["ADMIN"] },
+  { username: "John", password: "test12", roles: ["USER"] },
+  { username: "Smith", password: "test12", roles: ["USER"] },
 ];
 
 const fakeAuthProvider = {
